@@ -1,43 +1,30 @@
-// pages/register.js
-import { useState } from 'react';
+// pages/index.js
 import Link from 'next/link';
 
-export default function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Akun didaftarkan: ${email}`);
-  };
-
+export default function Home() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>📝 Daftar Akun</h2>
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <input
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={inputStyle}
-        />
-        <input
-          type="password"
-          placeholder="Kata Sandi"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={inputStyle}
-        />
-        <button type="submit" style={buttonStyle}>Daftar</button>
-      </form>
-      <p>Sudah punya akun? <Link href="/login">Login di sini</Link></p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white flex flex-col items-center justify-center px-4">
+      <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 text-gray-800">
+        Restore Old Photos.Bay
+      </h1>
+      <p className="text-lg md:text-xl text-center text-gray-600 max-w-2xl mb-8">
+        Perbaiki foto lama, buram, atau rusak dengan teknologi AI mutakhir. Gratis, cepat, dan berkualitas tinggi.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link href="/restoration-siri">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl text-lg shadow">
+            🖼️ Coba Restoration Siri
+          </button>
+        </Link>
+        <Link href="/login">
+          <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-2xl text-lg shadow">
+            🔐 Login Pengguna
+          </button>
+        </Link>
+      </div>
+      <footer className="mt-12 text-sm text-gray-500">
+        &copy; 2025 Restore Old Photos.Bay — powered by Next.js + Tailwind CSS
+      </footer>
     </div>
   );
 }
-
-const formStyle = { display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '300px', margin: 'auto' };
-const inputStyle = { padding: '0.5rem', fontSize: '1rem' };
-const buttonStyle = { padding: '0.5rem', background: '#0070f3', color: '#fff', border: 'none', borderRadius: '5px' };
