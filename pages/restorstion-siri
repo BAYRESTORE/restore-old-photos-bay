@@ -1,0 +1,8 @@
+export default function RestorationSiri() {
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>🖼️ Restoration Siri</h1>
+      <p>Upload foto lama Anda dan perbaiki dengan AI.</p>
+    </div>
+  );
+}
